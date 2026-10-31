@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Answer ten quick questions and Phone-o picks three phones sold in Australia that suit you, with the reasons why.">
+<title>Phone-o</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&family=Inter+Tight:wght@400;500;600&display=swap">
+<style>
+/* Layout: a book-style foldable phone centred on the page. Closed, its cover screen shows the intro and later the results; open, the wide inner screen shows the questions. Calm store UI (A) with warm coral and friendly type (C). */
+:root{
+  --page:#e9ecef; --page-glow:#ffffff; --caption:#5f6670;
+  --body1:#3a3d44; --body2:#1f2126; --bezel:#0c0d10;
+  --screen:#ffffff; --panel:#f4f4f6; --ink:#1d1d1f; --sub:#6e6e73; --line:#e3e3e7;
+  --coral:#ff5a36; --coral-ink:#ffffff; --coral-soft:#ffe9e3; --sun:#ffd23f;
+  --display:"Nunito", "Trebuchet MS", system-ui, sans-serif;
+  --ui:"Inter Tight", "Helvetica Neue", Arial, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --page:#121316; --page-glow:#23262c; --caption:#9aa0a8;
+  --screen:#16171a; --panel:#222328; --ink:#f2f2f4; --sub:#a1a1a8; --line:#2f3036;
+  --coral:#ff7352; --coral-ink:#1a0d08; --coral-soft:#3a201a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --page:#121316; --page-glow:#23262c; --caption:#9aa0a8;
+  --screen:#16171a; --panel:#222328; --ink:#f2f2f4; --sub:#a1a1a8; --line:#2f3036;
+  --coral:#ff7352; --coral-ink:#1a0d08; --coral-soft:#3a201a; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{background:radial-gradient(ellipse at 50% 40%, var(--page-glow), var(--page) 70%);background-color:var(--page);color:var(--ink);font:400 16px/1.45 var(--ui);
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:20px 28px;overflow-x:hidden}
+.stage{display:flex;flex-direction:column;align-items:center;gap:14px}
+.holder{position:relative;width:100%;perspective:2400px;display:flex;justify-content:center}
+.device{position:relative;width:560px;height:620px;flex:none;transform-style:preserve-3d;transform-origin:50% 0;
+  transform:translateX(var(--tx,0px)) scale(var(--s,1));transition:transform .9s cubic-bezier(.6,0,.2,1)}
+.half{position:absolute;top:0;width:280px;height:620px;transform-style:preserve-3d}
+.base{left:280px}
+.leaf{left:0;transform-origin:100% 50%;transform:translateZ(1px) rotateY(180deg);transition:transform .9s cubic-bezier(.6,0,.2,1)}
+.open .leaf{transform:translateZ(1px) rotateY(0deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:linear-gradient(135deg,var(--body1),var(--body2));padding:9px}
+.base .face{border-radius:0 30px 30px 0;padding-left:0}
+.leaf .front{border-radius:30px 0 0 30px;padding-right:0}
+.leaf .back{transform:rotateY(180deg);border-radius:0 30px 30px 0}
+.glass{width:100%;height:100%;background:var(--bezel);overflow:hidden;position:relative}
+.base .glass{border-radius:0 22px 22px 0}
+.leaf .front .glass{border-radius:22px 0 0 22px}
+.leaf .back .glass{border-radius:22px;padding:5px}
+.cover{position:relative;height:100%;border-radius:18px;background:var(--screen);overflow-y:auto;display:flex;flex-direction:column;scrollbar-width:none}
+.cover::-webkit-scrollbar{display:none}
+.cam{position:absolute;top:10px;left:50%;width:9px;height:9px;border-radius:50%;background:var(--bezel);transform:translateX(-50%);z-index:2}
+.inner{position:absolute;top:9px;bottom:9px;left:9px;right:9px;border-radius:22px;background:var(--screen);transform:translateZ(3px);opacity:0;pointer-events:none;transition:opacity .25s;overflow:hidden}
+.inner::after{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--line);opacity:.6;pointer-events:none}
+.open.ready .inner{opacity:1;pointer-events:auto}
+.caption{font:500 .8rem var(--ui);color:var(--caption);letter-spacing:.02em;text-align:center}
+
+/* Cover screen UI */
+.cv{padding:34px 18px 18px;display:flex;flex-direction:column;gap:14px;min-height:100%}
+.brand{font:900 .95rem var(--display);color:var(--coral)}
+.cv h1{font:900 1.85rem/1.05 var(--display);margin:6px 0 0;text-wrap:balance}
+.cv p{margin:0;color:var(--sub);font-size:.92rem}
+.spacer{flex:1}
+.btn{font:700 1rem var(--ui);border:0;border-radius:999px;padding:13px 20px;cursor:pointer;background:var(--coral);color:var(--coral-ink);width:100%}
+.btn.soft{background:var(--panel);color:var(--ink)}
+@media (hover:hover){.btn:hover{filter:brightness(1.06)}}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.mini{background:var(--panel);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:4px}
+.mini .lab{font:800 .68rem var(--display);text-transform:uppercase;letter-spacing:.08em;color:var(--sub)}
+.res{display:flex;flex-direction:column;gap:8px}
+.card{background:var(--panel);border-radius:14px;padding:10px 12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:start}
+.card .n{font:800 1rem/1.2 var(--display)}
+.pill{font:900 .85rem var(--display);background:var(--coral);color:var(--coral-ink);border-radius:999px;padding:3px 9px;white-space:nowrap}
+.card:not(.first) .pill{background:var(--coral-soft);color:var(--ink)}
+.card .w{grid-column:1/-1;color:var(--sub);font-size:.8rem;line-height:1.35}
+.card .st{grid-column:1/-1;font-size:.64rem;color:var(--sub);text-transform:uppercase;letter-spacing:.06em}
+.foot{position:sticky;bottom:0;background:var(--screen);padding-top:10px;margin-top:auto;display:flex;flex-direction:column;gap:8px;box-shadow:0 -10px 12px -6px var(--screen)}
+.foot .btn{padding:11px 10px;font-size:.88rem;white-space:nowrap}
+.first{outline:2.5px solid var(--coral)}
+.rk{font:900 .7rem var(--display);color:var(--coral);text-transform:uppercase;letter-spacing:.08em;grid-column:1/-1}
+.row{display:flex;gap:8px}
+.fine{font-size:.7rem!important;line-height:1.4}
+
+/* Inner screen UI */
+.q{position:absolute;inset:0;padding:30px 30px 24px;display:flex;flex-direction:column;gap:16px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.dots{display:flex;gap:5px}
+.dots i{width:22px;height:6px;border-radius:3px;background:var(--line)}
+.dots i.on{background:var(--coral)}
+.count{font:800 .85rem var(--display);color:var(--sub)}
+.q h2{font:900 2.05rem/1.1 var(--display);margin:4px 0 0;text-wrap:balance}
+.q .sub{margin:-6px 0 0;color:var(--sub)}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-content:start}
+.opt{font:600 1.15rem var(--ui);color:var(--ink);background:var(--panel);border:2px solid transparent;border-radius:16px;padding:14px;text-align:left;cursor:pointer;min-height:66px}
+.opt small{display:block;color:var(--sub);font-weight:400;font-size:.82rem}
+@media (hover:hover){.opt:hover{border-color:var(--coral)}}
+.opt[aria-pressed="true"]{border-color:var(--coral);background:var(--coral-soft)}
+.opts.many .opt{padding:12px 14px;min-height:54px}
+.bottom{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.link{font:600 .95rem var(--ui);background:none;border:0;color:var(--sub);cursor:pointer;padding:8px 4px}
+.custom{display:flex;gap:8px;align-items:center}
+.custom label{font-size:.85rem;color:var(--sub)}
+.custom input{font:600 1rem var(--ui);width:6.5em;padding:9px 12px;border-radius:999px;border:2px solid var(--line);background:var(--screen);color:var(--ink)}
+.custom .btn{width:auto;padding:9px 16px;font-size:.9rem}
+@media (prefers-reduced-motion:reduce){.device,.leaf{transition:none}}
+</style>
+</head>
+<body>
+
+
+<div class="stage">
+  <div class="holder" id="holder">
+    <div class="device" id="device">
+      <div class="half base"><div class="face"><div class="glass"></div></div></div>
+      <div class="half leaf">
+        <div class="face front"><div class="glass"></div></div>
+        <div class="face back"><div class="glass"><span class="cam"></span><div class="cover" id="cover"></div></div></div>
+      </div>
+      <div class="inner" id="inner"></div>
+    </div>
+  </div>
+  <div class="caption">Phones sold in Australia · prices in AUD</div>
+</div>
+
+<script src="scoring.js"></script>
+<script>
+let DATA={phones:[],last_updated:""}, PHONES=[];
+const recommend=(a)=>PhoneoScoring.recommend(PHONES,a);
+const Q = [
+ {key:"budget", title:"What's the most you want to spend?", opts:[["Under $300",300],["Under $500",500],["Under $700",700],["Under $1,000",1000],["Under $1,300",1300],["Under $1,600",1600],["Under $2,000",2000],["No limit",null]], custom:true},
+ {key:"platform", title:"iPhone or Android?", opts:[["iPhone","ios"],["Android","android"],["Don't mind","either"]]},
+ {key:"camera", title:"How much do you care about photos and videos?", opts:[["Not much",0],["A bit",1],["Quite a lot",2],["It's the main thing",3]]},
+ {key:"battery", title:"How long should the battery last?", opts:[["I charge it every night anyway",0],["Through a busy day",2],["Up to two days if possible",3]]},
+ {key:"performance", title:"Do you play games or use heavy apps?", opts:[["Rarely",0],["Sometimes",1],["Often",2],["I'm a serious gamer",3]]},
+ {key:"display", title:"How much do you watch videos or scroll social media?", opts:[["A little",0],["Some",1],["A lot",2],["Constantly",3]]},
+ {key:"size", title:"What size feels right?", opts:[["Small","small","Easy one-handed"],["Regular","regular","Around 6.3 to 6.5 inches"],["Big screen","large","6.7 inches and up"],["Don't mind","any"]]},
+ {key:"durability", title:"Are you tough on phones?", sub:"Drops, water, work sites, kids.", opts:[["Careful",0],["Normal",1],["A bit rough",2],["Very rough",3]]},
+ {key:"keepYears", title:"How long will you keep it?", sub:"Longer means software updates matter more.", opts:[["About 2 years",2],["3 to 4 years",4],["5 years or more",6]]},
+ {key:"refurbishedOk", title:"Is a refurbished phone OK?", sub:"Tested, cleaned and sold with a warranty.", opts:[["Yes, if it saves money",true],["No, new only",false]]},
+];
+const device=document.getElementById("device"), holder=document.getElementById("holder");
+const cover=document.getElementById("cover"), inner=document.getElementById("inner");
+const aud=n=>"$"+n.toLocaleString("en-AU");
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let isOpen=false, step=0, answers={}, results=null;
+
+function fit(){
+  const W=isOpen?560:280, H=620;
+  const s=Math.min(1,(holder.clientWidth)/W,(innerHeight-90)/H);
+  device.style.setProperty("--s",s);
+  device.style.setProperty("--tx",isOpen?"0px":(-140*s)+"px");
+  holder.style.height=(H*s)+"px";
+}
+addEventListener("resize",fit);
+
+function setOpen(open){
+  isOpen=open; device.classList.remove("ready");
+  device.classList.toggle("open",open); fit();
+  if(open) setTimeout(()=>{device.classList.add("ready");inner.querySelector("button")?.focus({preventScroll:true})}, reduce?0:820);
+}
+
+function renderCover(){
+  if(!results){
+    cover.innerHTML=`<div class="cv">
+      <div class="brand">Phone-o</div>
+      <h1>Find your next phone.</h1>
+      <p>Answer ten quick questions and we'll pick three phones sold in Australia that suit you, with the reasons why.</p>
+      <div class="mini"><span class="lab">For example</span><span>A parent who takes lots of photos, with under $1,000 to spend, gets the <b>Pixel 10a</b> at ${aud(849)}.</span></div>
+      <div class="spacer"></div>
+      <button class="btn" id="start">Start</button>
+      <p class="fine" style="text-align:center">Takes about a minute</p>
+    </div>`;
+    cover.querySelector("#start").onclick=()=>{step=0;renderQ();setOpen(true)};
+    return;
+  }
+  const st={verified:"Launch price",launch_rrp:"Original price, may be lower now",review_listing:"Typical price",retailer_listing:"Retailer price",estimate:"Estimated price"};
+  const cards=results.length?results.map((x,i)=>`<div class="card ${i===0?"first":""}">
+      ${i===0?`<span class="rk">Best match</span>`:""}
+      <span class="n">${x.p.name}</span><span class="pill">${aud(x.r.price)}</span>
+      <span class="w">${x.reasons.length?"Picked for its "+x.reasons.join(" and ")+".":"Best all-round balance for you."}</span>
+      <span class="st">${st[x.r.price_status]||"Price"}</span></div>`).join("")
+    :`<div class="mini">Nothing on our list fits all your answers. Try a higher budget, "Don't mind" for iPhone or Android, or allow refurbished.</div>`;
+  cover.innerHTML=`<div class="cv">
+    <div class="brand">Phone-o</div>
+    <h1 style="font-size:1.45rem;margin-top:0">${results.length?"Your top phones.":"No match yet."}</h1>
+    <p style="font-size:.82rem;margin-top:-8px">${answers.budget?"Under "+aud(answers.budget):"Any budget"} · ${{ios:"iPhone",android:"Android",either:"iPhone or Android"}[answers.platform]}</p>
+    <div class="res">${cards}</div>
+    <p class="fine">Same answers always give the same phones. List updated ${new Date(DATA.last_updated).toLocaleDateString("en-AU",{day:"numeric",month:"short",year:"numeric"})}. Check prices before you buy.</p>
+    <div class="foot"><div class="row"><button class="btn soft" id="edit">Edit answers</button><button class="btn" id="again">Start over</button></div></div>
+  </div>`;
+  cover.querySelector("#edit").onclick=()=>{step=0;renderQ();setOpen(true)};
+  cover.querySelector("#again").onclick=()=>{answers={};step=0;renderQ();setOpen(true)};
+  cover.scrollTop=0;
+}
+
+function renderQ(){
+  const q=Q[step], cur=answers[q.key];
+  const dots=Q.map((_,i)=>`<i class="${i<=step?"on":""}"></i>`).join("");
+  inner.innerHTML=`<div class="q">
+    <div class="top"><div class="dots" aria-hidden="true">${dots}</div><div class="count">${step+1} of ${Q.length}</div></div>
+    <h2>${q.title}</h2>${q.sub?`<p class="sub">${q.sub}</p>`:""}
+    <div class="opts ${q.opts.length>4?"many":""}"></div>
+    <div class="bottom">
+      <button class="link" id="back">${step===0?"Close":"Back"}</button>
+      ${q.custom?`<div class="custom"><label for="custom-budget">Or up to $</label><input id="custom-budget" type="number" inputmode="numeric" min="100" step="50" placeholder="850"><button class="btn" id="use-custom">Go</button></div>`:""}
+    </div></div>`;
+  const box=inner.querySelector(".opts");
+  q.opts.forEach(([label,val,hint])=>{
+    const b=document.createElement("button");b.className="opt";b.setAttribute("aria-pressed",String(cur===val));
+    b.innerHTML=label+(hint?`<small>${hint}</small>`:"");
+    b.onclick=()=>answer(q.key,val); box.append(b);
+  });
+  if(q.custom){const i=inner.querySelector("#custom-budget");if(cur&&!q.opts.some(o=>o[1]===cur))i.value=cur;
+    const go=()=>{const n=Math.round(Number(i.value));if(n>=100)answer("budget",n);else{i.focus();i.setCustomValidity("Enter at least $100");i.reportValidity()}};
+    inner.querySelector("#use-custom").onclick=go;i.onkeydown=e=>{if(e.key==="Enter")go()};i.oninput=()=>i.setCustomValidity("")}
+  inner.querySelector("#back").onclick=()=>{if(step===0){setOpen(false)}else{step--;renderQ()}};
+  if(document.activeElement&&inner.contains(document.activeElement)===false&&isOpen) inner.querySelector("button")?.focus({preventScroll:true});
+}
+function answer(k,v){
+  answers[k]=v;
+  if(step<Q.length-1){step++;renderQ();inner.querySelector(".opt")?.blur();return}
+  results=recommend(answers); renderCover(); setOpen(false);
+  setTimeout(()=>cover.querySelector("#again")?.focus({preventScroll:true}), reduce?0:900);
+}
+fit();
+cover.innerHTML='<div class="cv"><div class="brand">Phone-o</div><p>Loading phones…</p></div>';
+fetch("phones.json").then(r=>{if(!r.ok)throw new Error(r.status);return r.json()})
+  .then(d=>{DATA=d;PHONES=d.phones;renderCover()})
+  .catch(()=>{cover.innerHTML='<div class="cv"><div class="brand">Phone-o</div><h1>Couldn\'t load the phone list.</h1><p>Check your connection and refresh the page.</p></div>'});
+</script>
+
+</body>
+</html>
