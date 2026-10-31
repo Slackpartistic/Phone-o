@@ -1,0 +1,847 @@
+{
+  "schema_version": 1,
+  "last_updated": "2026-10-31",
+  "notes": "Ratings are 0-10 starting estimates from reviews; check against published tests (GSMArena battery, DXOMARK) in the first monthly update. price_status: verified = launch RRP from Australian launch coverage; launch_rrp = original RRP, may have dropped; review_listing / retailer_listing = price quoted by an AU review or retailer; estimate = needs checking.",
+  "phones": [
+    {
+      "id": "iphone-18-pro-max",
+      "name": "iPhone 18 Pro Max",
+      "brand": "Apple",
+      "os": "ios",
+      "released": "2026-09",
+      "condition": "new",
+      "screen_in": 6.9,
+      "ip_rating": "IP68",
+      "updates_years": 7,
+      "ratings": {
+        "camera": 10,
+        "battery": 10,
+        "performance": 10,
+        "display": 10,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 2299,
+          "currency": "AUD",
+          "price_status": "verified",
+          "price_source": "https://www.finder.com.au/news/iphone-18-pro-and-pro-max-price-specs-availability-australia",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "iphone-18-pro",
+      "name": "iPhone 18 Pro",
+      "brand": "Apple",
+      "os": "ios",
+      "released": "2026-09",
+      "condition": "new",
+      "screen_in": 6.3,
+      "ip_rating": "IP68",
+      "updates_years": 7,
+      "ratings": {
+        "camera": 10,
+        "battery": 8,
+        "performance": 10,
+        "display": 10,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 2099,
+          "currency": "AUD",
+          "price_status": "verified",
+          "price_source": "https://www.finder.com.au/news/iphone-18-pro-and-pro-max-price-specs-availability-australia",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "iphone-air",
+      "name": "iPhone Air",
+      "brand": "Apple",
+      "os": "ios",
+      "released": "2025-09",
+      "condition": "new",
+      "screen_in": 6.5,
+      "ip_rating": "IP68",
+      "updates_years": 6,
+      "ratings": {
+        "camera": 7,
+        "battery": 6,
+        "performance": 9,
+        "display": 9,
+        "durability": 7
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 1799,
+          "currency": "AUD",
+          "price_status": "launch_rrp",
+          "price_source": "https://www.shopback.com.au/guide/how-to/iphone-17-australia-best-price",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "iphone-17",
+      "name": "iPhone 17",
+      "brand": "Apple",
+      "os": "ios",
+      "released": "2025-09",
+      "condition": "new",
+      "screen_in": 6.3,
+      "ip_rating": "IP68",
+      "updates_years": 6,
+      "ratings": {
+        "camera": 8,
+        "battery": 8,
+        "performance": 9,
+        "display": 9,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 1399,
+          "currency": "AUD",
+          "price_status": "launch_rrp",
+          "price_source": "https://www.shopback.com.au/guide/how-to/iphone-17-australia-best-price",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "iphone-17e",
+      "name": "iPhone 17e",
+      "brand": "Apple",
+      "os": "ios",
+      "released": "2026-03",
+      "condition": "new",
+      "screen_in": 6.1,
+      "ip_rating": "IP68",
+      "updates_years": 6,
+      "ratings": {
+        "camera": 7,
+        "battery": 8,
+        "performance": 8,
+        "display": 7,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 999,
+          "currency": "AUD",
+          "price_status": "verified",
+          "price_source": "https://www.manofmany.com/tech/smartphones/iphone-17e-price-specs",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "iphone-se-3rd-gen-refurbished",
+      "name": "iPhone SE (3rd gen), refurbished",
+      "brand": "Apple",
+      "os": "ios",
+      "released": "2022-03",
+      "condition": "refurbished",
+      "screen_in": 4.7,
+      "ip_rating": "IP67",
+      "updates_years": 2,
+      "ratings": {
+        "camera": 5,
+        "battery": 4,
+        "performance": 6,
+        "display": 4,
+        "durability": 6
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 269,
+          "currency": "AUD",
+          "price_status": "retailer_listing",
+          "price_source": "https://www.phonebot.com.au/blog/best-budget-phones-under-300",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "iphone-12-mini-refurbished",
+      "name": "iPhone 12 mini, refurbished",
+      "brand": "Apple",
+      "os": "ios",
+      "released": "2020-11",
+      "condition": "refurbished",
+      "screen_in": 5.4,
+      "ip_rating": "IP68",
+      "updates_years": 1,
+      "ratings": {
+        "camera": 6,
+        "battery": 3,
+        "performance": 6,
+        "display": 7,
+        "durability": 6
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 269,
+          "currency": "AUD",
+          "price_status": "retailer_listing",
+          "price_source": "https://www.phonebot.com.au/blog/best-budget-phones-under-300",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "pixel-11-pro-fold",
+      "name": "Pixel 11 Pro Fold",
+      "brand": "Google",
+      "os": "android",
+      "released": "2026-08",
+      "condition": "new",
+      "screen_in": 8.0,
+      "ip_rating": "IP68",
+      "updates_years": 7,
+      "ratings": {
+        "camera": 9,
+        "battery": 7,
+        "performance": 8,
+        "display": 10,
+        "durability": 6
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 2799,
+          "currency": "AUD",
+          "price_status": "verified",
+          "price_source": "https://itwire.com/your-it-news/home-it/googles-pixel-11-lands-in-australia-from-1-499-with-gemini-ai-doing-the-tapping-new-pro-features-and-the-best-and-brightest-pixel-watch-yet",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "pixel-11-pro-xl",
+      "name": "Pixel 11 Pro XL",
+      "brand": "Google",
+      "os": "android",
+      "released": "2026-08",
+      "condition": "new",
+      "screen_in": 6.8,
+      "ip_rating": "IP68",
+      "updates_years": 7,
+      "ratings": {
+        "camera": 10,
+        "battery": 9,
+        "performance": 8,
+        "display": 10,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 2099,
+          "currency": "AUD",
+          "price_status": "verified",
+          "price_source": "https://itwire.com/your-it-news/home-it/googles-pixel-11-lands-in-australia-from-1-499-with-gemini-ai-doing-the-tapping-new-pro-features-and-the-best-and-brightest-pixel-watch-yet",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "pixel-11-pro",
+      "name": "Pixel 11 Pro",
+      "brand": "Google",
+      "os": "android",
+      "released": "2026-08",
+      "condition": "new",
+      "screen_in": 6.3,
+      "ip_rating": "IP68",
+      "updates_years": 7,
+      "ratings": {
+        "camera": 10,
+        "battery": 8,
+        "performance": 8,
+        "display": 10,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 1849,
+          "currency": "AUD",
+          "price_status": "verified",
+          "price_source": "https://itwire.com/your-it-news/home-it/googles-pixel-11-lands-in-australia-from-1-499-with-gemini-ai-doing-the-tapping-new-pro-features-and-the-best-and-brightest-pixel-watch-yet",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "pixel-11",
+      "name": "Pixel 11",
+      "brand": "Google",
+      "os": "android",
+      "released": "2026-08",
+      "condition": "new",
+      "screen_in": 6.3,
+      "ip_rating": "IP68",
+      "updates_years": 7,
+      "ratings": {
+        "camera": 9,
+        "battery": 8,
+        "performance": 8,
+        "display": 9,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 1499,
+          "currency": "AUD",
+          "price_status": "verified",
+          "price_source": "https://itwire.com/your-it-news/home-it/googles-pixel-11-lands-in-australia-from-1-499-with-gemini-ai-doing-the-tapping-new-pro-features-and-the-best-and-brightest-pixel-watch-yet",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "pixel-10a",
+      "name": "Pixel 10a",
+      "brand": "Google",
+      "os": "android",
+      "released": "2026-03",
+      "condition": "new",
+      "screen_in": 6.3,
+      "ip_rating": "IP68",
+      "updates_years": 7,
+      "ratings": {
+        "camera": 8,
+        "battery": 8,
+        "performance": 6,
+        "display": 8,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 849,
+          "currency": "AUD",
+          "price_status": "review_listing",
+          "price_source": "https://www.tomsguide.com/au/best-picks/best-cheap-phones",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "galaxy-s26-ultra",
+      "name": "Galaxy S26 Ultra",
+      "brand": "Samsung",
+      "os": "android",
+      "released": "2026-02",
+      "condition": "new",
+      "screen_in": 6.9,
+      "ip_rating": "IP68",
+      "updates_years": 7,
+      "ratings": {
+        "camera": 10,
+        "battery": 9,
+        "performance": 10,
+        "display": 10,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 2199,
+          "currency": "AUD",
+          "price_status": "verified",
+          "price_source": "https://www.finder.com.au/news/samsung-galaxy-s26-series-australia",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "galaxy-s26-plus",
+      "name": "Galaxy S26+",
+      "brand": "Samsung",
+      "os": "android",
+      "released": "2026-02",
+      "condition": "new",
+      "screen_in": 6.7,
+      "ip_rating": "IP68",
+      "updates_years": 7,
+      "ratings": {
+        "camera": 8,
+        "battery": 8,
+        "performance": 9,
+        "display": 9,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 1849,
+          "currency": "AUD",
+          "price_status": "verified",
+          "price_source": "https://www.finder.com.au/news/samsung-galaxy-s26-series-australia",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "galaxy-s26",
+      "name": "Galaxy S26",
+      "brand": "Samsung",
+      "os": "android",
+      "released": "2026-02",
+      "condition": "new",
+      "screen_in": 6.3,
+      "ip_rating": "IP68",
+      "updates_years": 7,
+      "ratings": {
+        "camera": 8,
+        "battery": 7,
+        "performance": 9,
+        "display": 9,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 1549,
+          "currency": "AUD",
+          "price_status": "verified",
+          "price_source": "https://www.finder.com.au/news/samsung-galaxy-s26-series-australia",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "galaxy-z-flip-7",
+      "name": "Galaxy Z Flip 7",
+      "brand": "Samsung",
+      "os": "android",
+      "released": "2025-07",
+      "condition": "new",
+      "screen_in": 6.9,
+      "ip_rating": "IP48",
+      "updates_years": 7,
+      "ratings": {
+        "camera": 7,
+        "battery": 6,
+        "performance": 8,
+        "display": 9,
+        "durability": 5
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 1799,
+          "currency": "AUD",
+          "price_status": "review_listing",
+          "price_source": "https://www.techgeek.com.au/best-mobile-phones-australia-2026/",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "galaxy-z-fold-8",
+      "name": "Galaxy Z Fold 8",
+      "brand": "Samsung",
+      "os": "android",
+      "released": "2026-07",
+      "condition": "new",
+      "screen_in": 8.0,
+      "ip_rating": "IP48",
+      "updates_years": 7,
+      "ratings": {
+        "camera": 8,
+        "battery": 7,
+        "performance": 9,
+        "display": 10,
+        "durability": 5
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 2899,
+          "currency": "AUD",
+          "price_status": "estimate",
+          "price_source": null,
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "galaxy-a57",
+      "name": "Galaxy A57",
+      "brand": "Samsung",
+      "os": "android",
+      "released": "2026-03",
+      "condition": "new",
+      "screen_in": 6.7,
+      "ip_rating": "IP68",
+      "updates_years": 6,
+      "ratings": {
+        "camera": 6,
+        "battery": 9,
+        "performance": 6,
+        "display": 8,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 749,
+          "currency": "AUD",
+          "price_status": "verified",
+          "price_source": "https://futurefive.com.au/story/samsung-launches-galaxy-a57-5g-a37-5g-in-australia-feba46c2-f43a-446f-a159-71d874a7eff4",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "galaxy-a37",
+      "name": "Galaxy A37",
+      "brand": "Samsung",
+      "os": "android",
+      "released": "2026-03",
+      "condition": "new",
+      "screen_in": 6.7,
+      "ip_rating": "IP68",
+      "updates_years": 6,
+      "ratings": {
+        "camera": 6,
+        "battery": 8,
+        "performance": 5,
+        "display": 7,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 599,
+          "currency": "AUD",
+          "price_status": "verified",
+          "price_source": "https://futurefive.com.au/story/samsung-launches-galaxy-a57-5g-a37-5g-in-australia-feba46c2-f43a-446f-a159-71d874a7eff4",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "galaxy-a56",
+      "name": "Galaxy A56",
+      "brand": "Samsung",
+      "os": "android",
+      "released": "2025-03",
+      "condition": "new",
+      "screen_in": 6.7,
+      "ip_rating": "IP67",
+      "updates_years": 6,
+      "ratings": {
+        "camera": 7,
+        "battery": 8,
+        "performance": 6,
+        "display": 8,
+        "durability": 7
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 549,
+          "currency": "AUD",
+          "price_status": "review_listing",
+          "price_source": "https://tech-insider.org/au/best-budget-smartphones-australia/",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "galaxy-a16-5g",
+      "name": "Galaxy A16 5G",
+      "brand": "Samsung",
+      "os": "android",
+      "released": "2024-10",
+      "condition": "new",
+      "screen_in": 6.7,
+      "ip_rating": "IP54",
+      "updates_years": 6,
+      "ratings": {
+        "camera": 4,
+        "battery": 8,
+        "performance": 3,
+        "display": 5,
+        "durability": 6
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 279,
+          "currency": "AUD",
+          "price_status": "review_listing",
+          "price_source": "https://tech-insider.org/au/best-budget-smartphones-australia/",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "galaxy-xcover-6-pro-refurbished",
+      "name": "Galaxy XCover 6 Pro, refurbished",
+      "brand": "Samsung",
+      "os": "android",
+      "released": "2022-07",
+      "condition": "refurbished",
+      "screen_in": 6.6,
+      "ip_rating": "IP68",
+      "updates_years": 2,
+      "ratings": {
+        "camera": 4,
+        "battery": 6,
+        "performance": 5,
+        "display": 5,
+        "durability": 10
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 199,
+          "currency": "AUD",
+          "price_status": "retailer_listing",
+          "price_source": "https://www.phonebot.com.au/blog/best-budget-phones-under-300",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "nothing-phone-3",
+      "name": "Nothing Phone (3)",
+      "brand": "Nothing",
+      "os": "android",
+      "released": "2025-07",
+      "condition": "new",
+      "screen_in": 6.7,
+      "ip_rating": "IP68",
+      "updates_years": 5,
+      "ratings": {
+        "camera": 6,
+        "battery": 8,
+        "performance": 8,
+        "display": 9,
+        "durability": 7
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 899,
+          "currency": "AUD",
+          "price_status": "review_listing",
+          "price_source": "https://www.techgeek.com.au/best-mobile-phones-australia-2026/",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "nothing-phone-3a",
+      "name": "Nothing Phone (3a)",
+      "brand": "Nothing",
+      "os": "android",
+      "released": "2025-03",
+      "condition": "new",
+      "screen_in": 6.8,
+      "ip_rating": "IP64",
+      "updates_years": 4,
+      "ratings": {
+        "camera": 7,
+        "battery": 8,
+        "performance": 6,
+        "display": 8,
+        "durability": 6
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 599,
+          "currency": "AUD",
+          "price_status": "review_listing",
+          "price_source": "https://www.tomsguide.com/au/best-picks/best-cheap-phones",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "nothing-phone-3a-lite",
+      "name": "Nothing Phone (3a) Lite",
+      "brand": "Nothing",
+      "os": "android",
+      "released": "2025-11",
+      "condition": "new",
+      "screen_in": 6.8,
+      "ip_rating": "IP54",
+      "updates_years": 4,
+      "ratings": {
+        "camera": 5,
+        "battery": 8,
+        "performance": 4,
+        "display": 7,
+        "durability": 5
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 439,
+          "currency": "AUD",
+          "price_status": "review_listing",
+          "price_source": "https://www.tomsguide.com/au/best-picks/best-cheap-phones",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "motorola-edge-60-pro",
+      "name": "Motorola Edge 60 Pro",
+      "brand": "Motorola",
+      "os": "android",
+      "released": "2025-05",
+      "condition": "new",
+      "screen_in": 6.7,
+      "ip_rating": "IP69",
+      "updates_years": 3,
+      "ratings": {
+        "camera": 7,
+        "battery": 8,
+        "performance": 6,
+        "display": 8,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 649,
+          "currency": "AUD",
+          "price_status": "estimate",
+          "price_source": "https://tech-insider.org/au/best-budget-smartphones-australia/",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "motorola-edge-60",
+      "name": "Motorola Edge 60",
+      "brand": "Motorola",
+      "os": "android",
+      "released": "2025-05",
+      "condition": "new",
+      "screen_in": 6.7,
+      "ip_rating": "IP69",
+      "updates_years": 3,
+      "ratings": {
+        "camera": 6,
+        "battery": 9,
+        "performance": 5,
+        "display": 8,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 729,
+          "currency": "AUD",
+          "price_status": "review_listing",
+          "price_source": "https://www.techgeek.com.au/best-mobile-phones-australia-2026/",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "motorola-edge-60-fusion",
+      "name": "Motorola Edge 60 Fusion",
+      "brand": "Motorola",
+      "os": "android",
+      "released": "2025-04",
+      "condition": "new",
+      "screen_in": 6.7,
+      "ip_rating": "IP69",
+      "updates_years": 3,
+      "ratings": {
+        "camera": 6,
+        "battery": 8,
+        "performance": 5,
+        "display": 8,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 449,
+          "currency": "AUD",
+          "price_status": "estimate",
+          "price_source": "https://tech-insider.org/au/best-budget-smartphones-australia/",
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "moto-g-2026",
+      "name": "Moto G (2026)",
+      "brand": "Motorola",
+      "os": "android",
+      "released": "2026-02",
+      "condition": "new",
+      "screen_in": 6.7,
+      "ip_rating": "IP52",
+      "updates_years": 2,
+      "ratings": {
+        "camera": 4,
+        "battery": 8,
+        "performance": 3,
+        "display": 5,
+        "durability": 6
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 249,
+          "currency": "AUD",
+          "price_status": "estimate",
+          "price_source": null,
+          "checked": "2026-10-31"
+        }
+      }
+    },
+    {
+      "id": "honor-magic-8-pro",
+      "name": "Honor Magic 8 Pro",
+      "brand": "Honor",
+      "os": "android",
+      "released": "2025-11",
+      "condition": "new",
+      "screen_in": 6.7,
+      "ip_rating": "IP69",
+      "updates_years": 6,
+      "ratings": {
+        "camera": 9,
+        "battery": 10,
+        "performance": 9,
+        "display": 9,
+        "durability": 8
+      },
+      "regions": {
+        "AU": {
+          "available": true,
+          "price": 1699,
+          "currency": "AUD",
+          "price_status": "estimate",
+          "price_source": "https://www.tomsguide.com/best-picks/best-android-phones-au",
+          "checked": "2026-10-31"
+        }
+      }
+    }
+  ]
+}
